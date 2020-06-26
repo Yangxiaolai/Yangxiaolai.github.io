@@ -87,7 +87,7 @@
 <meta property="og:description" content="HTML5新增特性一、语义标签   新增标签 具体描述    &lt;header&gt; 定义文档头部区域   &lt;footer&gt; 定义文档尾部内容   &lt;nav&gt; 定义文档的导航   &lt;section&gt; 定义文档的节   &lt;article&gt; 定义文章   &lt;aside&gt; 定义页面以外的内容（侧面）   &lt;details&gt; 定">
 <meta property="og:image" content="http://yoursite.com/2020/06/23/HTML5%E6%96%B0%E5%A2%9E%E7%89%B9%E6%80%A7/1.png">
 <meta property="article:published_time" content="2020-06-23T12:16:33.000Z">
-<meta property="article:modified_time" content="2020-06-24T13:46:03.131Z">
+<meta property="article:modified_time" content="2020-06-26T12:59:04.582Z">
 <meta property="article:author" content="鲸落">
 <meta property="article:tag" content="html">
 <meta name="twitter:card" content="summary">
@@ -567,6 +567,72 @@
 <h2 id="六、地理定位"><a href="#六、地理定位" class="headerlink" title="六、地理定位"></a>六、地理定位</h2><p>Geolocation（地理定位）用于定位用户的位置。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span>点击按钮获取您当前坐标：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"getLocation()"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> x=<span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>);</span></span><br><span class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">getLocation</span><span class="params">()</span></span></span></span><br><span class="line">&#123;</span><br><span class="line">	if (navigator.geolocation)</span><br><span class="line">	&#123;</span><br><span class="line">		navigator.geolocation.getCurrentPosition(showPosition);</span><br><span class="line">	&#125;</span><br><span class="line"><span class="actionscript">	<span class="keyword">else</span></span></span><br><span class="line">	&#123;</span><br><span class="line"><span class="actionscript">		x.innerHTML=<span class="string">"该浏览器不支持获取地理位置。"</span>;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">showPosition</span><span class="params">(position)</span></span></span></span><br><span class="line">&#123;</span><br><span class="line"><span class="actionscript">	x.innerHTML=<span class="string">"纬度: "</span> + position.coords.latitude + </span></span><br><span class="line"><span class="actionscript">	<span class="string">"&lt;br&gt;经度: "</span> + position.coords.longitude;	</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="七、拖放API"><a href="#七、拖放API" class="headerlink" title="七、拖放API"></a>七、拖放API</h2><p>拖放是一种常见的特性，即抓取对象以后拖到另一个位置。在 HTML5 中，拖放是标准的一部分，任何元素都能够拖放。</p>
+<p>拖放的过程分为源对象和目标对象。源对象是指你即将拖动元素，而目标对象则是指拖动之后要放置的目标位置。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="（1）拖放的源对象触发的事件"><a href="#（1）拖放的源对象触发的事件" class="headerlink" title="（1）拖放的源对象触发的事件"></a>（1）拖放的源对象触发的事件</h3><ol>
+<li>dragstart：拖动开始</li>
+<li>drag：拖动中</li>
+<li>dragend：拖动结束</li>
+<li>整个拖动过程的组成： dragstart*1 + drag*n + dragend*1</li>
+</ol>
+<h3 id="（2）拖放的目标对象触发的事件"><a href="#（2）拖放的目标对象触发的事件" class="headerlink" title="（2）拖放的目标对象触发的事件"></a>（2）拖放的目标对象触发的事件</h3><ol>
+<li>dragenter：拖动着进入</li>
+<li>dragover：拖动着悬停</li>
+<li>dragleave：拖动着离开</li>
+<li>drop：释放</li>
+<li>整个拖动过程的组成1： dragenter*1 + dragover*n + dragleave*1</li>
+<li>整个拖动过程的组成2： dragenter*1 + dragover*n + drop*1</li>
+</ol>
+<h3 id="（3）dataTransfer：用于数据传递的“拖拉机”对象"><a href="#（3）dataTransfer：用于数据传递的“拖拉机”对象" class="headerlink" title="（3）dataTransfer：用于数据传递的“拖拉机”对象"></a>（3）<strong>dataTransfer：用于数据传递的“拖拉机”对象</strong></h3><ol>
+<li>在拖动源对象事件中使用e.dataTransfer属性保存数据：e.dataTransfer.setData( k,v )</li>
+<li>在拖动目标对象事件中使用e.dataTransfer属性读取数据：var value = e.dataTransfer.getData( k )</li>
+</ol>
+<h2 id="八、Web-Worker"><a href="#八、Web-Worker" class="headerlink" title="八、Web Worker"></a>八、<strong>Web Worker</strong></h2><p>Web Worker可以通过加载一个脚本文件，进而创建一个独立工作的线程，在主线程之外运行。</p>
+<p> 基本使用：</p>
+<p>​          Web Worker的基本原理就是在当前javascript的主线程中，使用Worker类加载一个javascript文件来开辟一个新的线程，起到互不阻塞执行的效果，并且提供主线程和新县城之间数据交换的接口：postMessage、onmessage。</p>
+<p>JS代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">                             <span class="keyword">var</span> data = e.data;  <span class="comment">//接收UI线程的消息</span></span><br><span class="line"></span><br><span class="line">                             <span class="comment">//执行耗时任务....</span></span><br><span class="line"></span><br><span class="line">                             postMessage(result);   <span class="comment">//给UI线程发送消息</span></span><br><span class="line"></span><br><span class="line">                    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>html代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var w = new Worker('js/x.js')</span><br><span class="line"></span><br><span class="line">                    w.postMessage('发送给Worker线程的消息');</span><br><span class="line"></span><br><span class="line">                    w.onmessage = function(e)&#123;</span><br><span class="line"></span><br><span class="line">                             e.data; //来自Worker线程的消息</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="九、Web-Storage"><a href="#九、Web-Storage" class="headerlink" title="九、Web Storage"></a>九、<strong>Web Storage</strong></h2><p>Web项目存储数据常用的方案：</p>
+<h3 id="（1）服务器端存储"><a href="#（1）服务器端存储" class="headerlink" title="（1）服务器端存储"></a>（1）<strong>服务器端存储</strong></h3><ol>
+<li>数据库存储，如用户信息、商品信息等核心数据</li>
+<li>Session/内存存储，如用户的登录信息</li>
+</ol>
+<h3 id="（2）客户端存储"><a href="#（2）客户端存储" class="headerlink" title="（2）客户端存储"></a>（2）<strong>客户端存储</strong></h3><ol>
+<li><p>Cookie存储，如用户偏好、访问历史，浏览器兼容性好但处理麻烦且容量限制</p>
+</li>
+<li><p>H5 WebStorage存储，具体涉及到两个对象</p>
+<p>Ⅰ window.sessionStorage：类数组对象，通过key=&gt;value对存储字符串数据——会话级存储（在浏览器关闭的时候就会清除）</p>
+<pre><code>添加数据：sessionStorage[&apos;key&apos;] = &apos;value&apos;
+
+修改数据：sessionStorage[&apos;key&apos;] = &apos;newValue&apos;
+
+删除数据：delete sessionStorage[&apos;key&apos;]
+
+获得数据：var  v = sessionStorage[&apos;key&apos;]</code></pre><p>Ⅱ window.localStorage：类数组对象，通过key=&gt;value对存储字符串数据——本地/跨会话级/永久存储（没有时间限制的数据存储）</p>
+<pre><code>添加数据：localStorage[&apos;key&apos;] = &apos;value&apos;
+
+修改数据：localStorage[&apos;key&apos;] = &apos;newValue&apos;
+
+删除数据：delete localStorage[&apos;key&apos;]
+
+获得数据：var  v = localStorage[&apos;key&apos;]</code></pre></li>
+</ol>
+<h2 id="十、WebSocket"><a href="#十、WebSocket" class="headerlink" title="十、WebSocket"></a>十、<strong>WebSocket</strong></h2><p> WebSocket协议为web应用程序客户端和服务端之间提供了一种全双工通信机制。</p>
+<p>特点：</p>
+<p> （1）握手阶段采用HTTP协议，默认端口是80和443</p>
+<p> （2）建立在TCP协议基础之上，和http协议同属于应用层</p>
+<p> （3）可以发送文本，也可以发送二进制数据。</p>
+<p> （4）没有同源限制，客户端可以与任意服务器通信。</p>
+<p> （5）协议标识符是ws（如果加密，为wss），如ws://localhost:8023</p>
+<p>参考文章：</p>
+<p><a href="https://www.cnblogs.com/binguo666/p/10928907.html" target="_blank" rel="noopener">https://www.cnblogs.com/binguo666/p/10928907.html</a></p>
+<p><a href="https://blog.csdn.net/m0_37696296/article/details/81083402" target="_blank" rel="noopener">https://blog.csdn.net/m0_37696296/article/details/81083402</a></p>
 
       
     </div>
@@ -757,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5新增特性"><span class="nav-number">1.</span> <span class="nav-text">HTML5新增特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、语义标签"><span class="nav-number">1.1.</span> <span class="nav-text">一、语义标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、增强型表单"><span class="nav-number">1.2.</span> <span class="nav-text">二、增强型表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）input输入特性"><span class="nav-number">1.2.1.</span> <span class="nav-text">（1）input输入特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）新增表单元素"><span class="nav-number">1.2.2.</span> <span class="nav-text">（2）新增表单元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）新增表单属性"><span class="nav-number">1.2.3.</span> <span class="nav-text">（3）新增表单属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、音频和视频"><span class="nav-number">1.3.</span> <span class="nav-text">三、音频和视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Canvas绘图"><span class="nav-number">1.4.</span> <span class="nav-text">四、Canvas绘图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、内联-SVG"><span class="nav-number">1.5.</span> <span class="nav-text">五、内联 SVG</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）什么是SVG？"><span class="nav-number">1.5.1.</span> <span class="nav-text">（1）什么是SVG？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）SVG的优势"><span class="nav-number">1.5.2.</span> <span class="nav-text">（2）SVG的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）SVG-与-Canvas两者间的区别"><span class="nav-number">1.5.3.</span> <span class="nav-text">（3）SVG 与 Canvas两者间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（4）Canvas-与-SVG-的比较"><span class="nav-number">1.5.4.</span> <span class="nav-text">（4）Canvas 与 SVG 的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、地理定位"><span class="nav-number">1.6.</span> <span class="nav-text">六、地理定位</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5新增特性"><span class="nav-number">1.</span> <span class="nav-text">HTML5新增特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、语义标签"><span class="nav-number">1.1.</span> <span class="nav-text">一、语义标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、增强型表单"><span class="nav-number">1.2.</span> <span class="nav-text">二、增强型表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）input输入特性"><span class="nav-number">1.2.1.</span> <span class="nav-text">（1）input输入特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）新增表单元素"><span class="nav-number">1.2.2.</span> <span class="nav-text">（2）新增表单元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）新增表单属性"><span class="nav-number">1.2.3.</span> <span class="nav-text">（3）新增表单属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、音频和视频"><span class="nav-number">1.3.</span> <span class="nav-text">三、音频和视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Canvas绘图"><span class="nav-number">1.4.</span> <span class="nav-text">四、Canvas绘图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、内联-SVG"><span class="nav-number">1.5.</span> <span class="nav-text">五、内联 SVG</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）什么是SVG？"><span class="nav-number">1.5.1.</span> <span class="nav-text">（1）什么是SVG？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）SVG的优势"><span class="nav-number">1.5.2.</span> <span class="nav-text">（2）SVG的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）SVG-与-Canvas两者间的区别"><span class="nav-number">1.5.3.</span> <span class="nav-text">（3）SVG 与 Canvas两者间的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（4）Canvas-与-SVG-的比较"><span class="nav-number">1.5.4.</span> <span class="nav-text">（4）Canvas 与 SVG 的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、地理定位"><span class="nav-number">1.6.</span> <span class="nav-text">六、地理定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、拖放API"><span class="nav-number">1.7.</span> <span class="nav-text">七、拖放API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）拖放的源对象触发的事件"><span class="nav-number">1.7.1.</span> <span class="nav-text">（1）拖放的源对象触发的事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）拖放的目标对象触发的事件"><span class="nav-number">1.7.2.</span> <span class="nav-text">（2）拖放的目标对象触发的事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）dataTransfer：用于数据传递的“拖拉机”对象"><span class="nav-number">1.7.3.</span> <span class="nav-text">（3）dataTransfer：用于数据传递的“拖拉机”对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、Web-Worker"><span class="nav-number">1.8.</span> <span class="nav-text">八、Web Worker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九、Web-Storage"><span class="nav-number">1.9.</span> <span class="nav-text">九、Web Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）服务器端存储"><span class="nav-number">1.9.1.</span> <span class="nav-text">（1）服务器端存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）客户端存储"><span class="nav-number">1.9.2.</span> <span class="nav-text">（2）客户端存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十、WebSocket"><span class="nav-number">1.10.</span> <span class="nav-text">十、WebSocket</span></a></li></ol></li></ol></div>
             
 
           </div>
